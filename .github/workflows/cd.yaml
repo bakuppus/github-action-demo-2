@@ -5,8 +5,7 @@ name: CD
 on:
   workflow_run:
     workflows: ["CI"]
-    branches:
-      - main
+    branches: ["main"]
     types:
       - completed
 jobs:
@@ -19,4 +18,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+        run: echo "Deploy"
