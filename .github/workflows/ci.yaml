@@ -16,9 +16,23 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install, lint, and test
+
+      - name: "npm install"
         run: |
+          echo "npm install"
           npm ci
+
+      - name: "Lint code"
+        run: |
+          echo "Linting repository"
           npm run lint
+
+      - name: "Run audit"
+        run: |
+          echo "Running unit tests"
           npm audit
+
+      - name: "Run unit tests"
+        run: |
+          echo "Running unit tests"
           npm test
