@@ -36,3 +36,15 @@ jobs:
         run: |
           echo "Running unit tests"
           npm test
+
+  label:
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - uses: actions/labeler@v4
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
