@@ -3,8 +3,8 @@ name: Run Two
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: ["Run Tests"]
-    branches: [main, canary]
+    workflows: ["Run One"]
+    branches: [main]
     types:
       - completed
 
