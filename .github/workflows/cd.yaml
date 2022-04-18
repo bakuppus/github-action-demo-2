@@ -1,18 +1,19 @@
 name: Run Two
 
 on:
-  workflow_dispatch:
   workflow_run:
     workflows:
       - "CI"
-    branches:
-      - main
     types:
       - completed
+    branches:
+      - main
+
 
 jobs:
   two:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
       - name: "Checkout Code"
