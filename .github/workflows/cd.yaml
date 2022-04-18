@@ -1,22 +1,16 @@
-# Workflow to deploy on ECS
-
-name: CD
-
 on:
   workflow_run:
-    workflows: ["CI"]
-    types:
-      - completed
-    branches:
-      - "main/**"
+    workflows: [CI]
+    types: [completed]
+
 jobs:
-
-  build:
-    name: "deploy"
-    runs-on: "ubuntu-latest"
+  on-success:
+    runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
-
     steps:
-      - uses: actions/checkout@v3
-      - name: Build the Docker image
-        run: echo "Deploy"
+      - run: echo 'The triggering workflow passed'
+  on-failure:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - run: echo 'The triggering workflow failed'
