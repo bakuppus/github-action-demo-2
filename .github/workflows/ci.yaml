@@ -1,18 +1,45 @@
-name: Run One
+name: CI
 
-on:
-  pull_request:
+on: [pull_request]
 
 jobs:
-  one:
+  test:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [16.x]
+
     steps:
-      - name: "Checkout Code"
-        uses: "actions/checkout@v2"
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
 
-      - name: workflow 1
+      - name: "npm install"
         run: |
-          echo "workflow 1 complete"
+          echo "npm install"
+          npm ci
 
+      - name: "npm build"
+        run: |
+          echo "npm build"
+          npm build
+
+
+      - name: "Lint code"
+        run: |
+          echo "Linting repository"
+          npm run lint
+
+      - name: "Run audit"
+        run: |
+          echo "Running unit tests"
+          npm audit
+
+      - name: "Run unit tests"
+        run: |
+          echo "Running unit tests"
+          npm test
 
