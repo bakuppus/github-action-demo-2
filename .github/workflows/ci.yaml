@@ -44,6 +44,7 @@ jobs:
         run: |
           echo "Running unit tests"
           npm test
+          npm run coverage
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
