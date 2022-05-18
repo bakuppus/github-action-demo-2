@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint **.js",
     "package": "ncc build index.js -o dist",
-    "test": "eslint **.js && jest --coverage"
+    "test": "eslint **.js && jest --coverage",
+    "coverage": "nyc report --reporter=lcov"
   },
   "repository": {
     "type": "git",
