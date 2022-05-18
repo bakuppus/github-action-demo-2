@@ -43,7 +43,7 @@ jobs:
       - name: "Run unit tests"
         run: |
           echo "Running unit tests"
-          npm test
+          npm run coverage
 
 
       - name: Coveralls
