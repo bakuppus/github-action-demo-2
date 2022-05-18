@@ -40,7 +40,10 @@ jobs:
           echo "Running unit tests"
           npm audit
 
-
+      - name: "Run unit tests"
+        run: |
+          echo "Running unit tests"
+          npm test
 
 
       - name: Coveralls
