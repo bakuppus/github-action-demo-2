@@ -1,3 +1,6 @@
+<a href='https://coveralls.io/github/bakuppus/github-action-demo-2?branch=feature/1'><img src='https://coveralls.io/repos/github/bakuppus/github-action-demo-2/badge.svg?branch=feature/1' alt='Coverage Status' /></a>
+
+
 # Robots Parser [![NPM downloads](https://img.shields.io/npm/dm/robots-parser)](https://www.npmjs.com/package/robots-parser) [![DeepScan grade](https://deepscan.io/api/teams/457/projects/16277/branches/344939/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=457&pid=16277&bid=344939) [![GitHub license](https://img.shields.io/github/license/samclarke/robots-parser.svg)](https://github.com/samclarke/robots-parser/blob/master/license.md) [![Coverage Status](https://coveralls.io/repos/github/samclarke/robots-parser/badge.svg?branch=master)](https://coveralls.io/github/samclarke/robots-parser?branch=master)
 
 A robots.txt parser which aims to be complaint with the [draft specification](https://datatracker.ietf.org/doc/html/draft-koster-rep).
