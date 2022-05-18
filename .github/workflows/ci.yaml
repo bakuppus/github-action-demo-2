@@ -44,9 +44,11 @@ jobs:
         run: |
           echo "Running unit tests"
           npm test
-          npm run coverage
+
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
         with:
           github-token: ${{ secrets.GIT_TOKEN }}
