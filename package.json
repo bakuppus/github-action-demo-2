@@ -55,6 +55,7 @@
 	},
 	"types": "./index.d.ts",
 	"dependencies": {
-		"codacy-coverage": "^3.4.0"
+		"codacy-coverage": "^3.4.0",
+		"mocha-lcov-reporter": "^1.3.0"
 	}
 }
