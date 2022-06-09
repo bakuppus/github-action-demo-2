@@ -21,6 +21,7 @@
 	},
 	"scripts": {
 		"test": "nyc --reporter=text-summary --reporter=html --reporter=lcovonly mocha"
+		"test": "jest --coverage",
 	},
 	"repository": {
 		"type": "git",
